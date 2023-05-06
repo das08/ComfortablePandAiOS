@@ -12,6 +12,5 @@ import SwiftUI
 struct PandAssist_WidgetBundle: WidgetBundle {
     var body: some Widget {
         PandAssist_Widget()
-        PandAssist_WidgetLiveActivity()
     }
 }

@@ -17,21 +17,19 @@
 		97DB2C4129F936150037C59D /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4029F936150037C59D /* EntryView.swift */; };
 		97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4529F95B9F0037C59D /* Entry.swift */; };
 		97DB2C482A0654A10037C59D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C472A0654A10037C59D /* MainView.swift */; };
-		97DB2C652A065C180037C59D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DB2C642A065C180037C59D /* WidgetKit.framework */; };
-		97DB2C672A065C180037C59D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DB2C662A065C180037C59D /* SwiftUI.framework */; };
-		97DB2C6A2A065C180037C59D /* PandAssist_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C692A065C180037C59D /* PandAssist_WidgetBundle.swift */; };
-		97DB2C6C2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6B2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift */; };
-		97DB2C6E2A065C180037C59D /* PandAssist_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6D2A065C180037C59D /* PandAssist_Widget.swift */; };
-		97DB2C712A065C1A0037C59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97DB2C702A065C1A0037C59D /* Assets.xcassets */; };
-		97DB2C732A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */; };
-		97DB2C742A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */; };
-		97DB2C772A065C1A0037C59D /* PandAssist WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		97DB2C7E2A067BD90037C59D /* WidgetMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C7D2A067BD90037C59D /* WidgetMainView.swift */; };
 		97DB2C812A0686680037C59D /* dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C802A0686680037C59D /* dates.swift */; };
 		97DB2C832A06875A0037C59D /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C822A06875A0037C59D /* colors.swift */; };
-		97DB2C842A06875A0037C59D /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C822A06875A0037C59D /* colors.swift */; };
-		97DB2C852A06881B0037C59D /* dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C802A0686680037C59D /* dates.swift */; };
-		97DB2C862A0688210037C59D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4529F95B9F0037C59D /* Entry.swift */; };
+		97DB2CA32A068C450037C59D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DB2C642A065C180037C59D /* WidgetKit.framework */; };
+		97DB2CA42A068C450037C59D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DB2C662A065C180037C59D /* SwiftUI.framework */; };
+		97DB2CA72A068C450037C59D /* PandAssist_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CA62A068C450037C59D /* PandAssist_WidgetBundle.swift */; };
+		97DB2CA92A068C450037C59D /* PandAssist_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CA82A068C450037C59D /* PandAssist_Widget.swift */; };
+		97DB2CAB2A068C470037C59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97DB2CAA2A068C470037C59D /* Assets.xcassets */; };
+		97DB2CAF2A068C470037C59D /* PandAssist WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 97DB2CA22A068C450037C59D /* PandAssist WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		97DB2CB32A068C4E0037C59D /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C822A06875A0037C59D /* colors.swift */; };
+		97DB2CB42A068C500037C59D /* dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C802A0686680037C59D /* dates.swift */; };
+		97DB2CB52A068C540037C59D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4529F95B9F0037C59D /* Entry.swift */; };
+		97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CB92A068D450037C59D /* WidgetView.swift */; };
+		97DB2CBB2A068D920037C59D /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CB92A068D450037C59D /* WidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +47,11 @@
 			remoteGlobalIDString = 97DB2C1029F928F10037C59D;
 			remoteInfo = ComfortablePandAiOS;
 		};
-		97DB2C752A065C1A0037C59D /* PBXContainerItemProxy */ = {
+		97DB2CAD2A068C470037C59D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97DB2C0929F928F10037C59D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 97DB2C612A065C180037C59D;
+			remoteGlobalIDString = 97DB2CA12A068C450037C59D;
 			remoteInfo = "PandAssist WidgetExtension";
 		};
 /* End PBXContainerItemProxy section */
@@ -65,7 +63,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				97DB2C772A065C1A0037C59D /* PandAssist WidgetExtension.appex in Embed Foundation Extensions */,
+				97DB2CAF2A068C470037C59D /* PandAssist WidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,18 +85,16 @@
 		97DB2C4029F936150037C59D /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		97DB2C4529F95B9F0037C59D /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		97DB2C472A0654A10037C59D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PandAssist WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DB2C642A065C180037C59D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		97DB2C662A065C180037C59D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		97DB2C692A065C180037C59D /* PandAssist_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_WidgetBundle.swift; sourceTree = "<group>"; };
-		97DB2C6B2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_WidgetLiveActivity.swift; sourceTree = "<group>"; };
-		97DB2C6D2A065C180037C59D /* PandAssist_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_Widget.swift; sourceTree = "<group>"; };
-		97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PandAssist_Widget.intentdefinition; sourceTree = "<group>"; };
-		97DB2C702A065C1A0037C59D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		97DB2C722A065C1A0037C59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97DB2C7D2A067BD90037C59D /* WidgetMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMainView.swift; sourceTree = "<group>"; };
 		97DB2C802A0686680037C59D /* dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dates.swift; sourceTree = "<group>"; };
 		97DB2C822A06875A0037C59D /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		97DB2CA22A068C450037C59D /* PandAssist WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PandAssist WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97DB2CA62A068C450037C59D /* PandAssist_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_WidgetBundle.swift; sourceTree = "<group>"; };
+		97DB2CA82A068C450037C59D /* PandAssist_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_Widget.swift; sourceTree = "<group>"; };
+		97DB2CAA2A068C470037C59D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97DB2CAC2A068C470037C59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97DB2CB92A068D450037C59D /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WidgetView.swift; path = ComfortablePandAiOS/utils/WidgetView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +119,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97DB2C5F2A065C180037C59D /* Frameworks */ = {
+		97DB2C9F2A068C450037C59D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97DB2C672A065C180037C59D /* SwiftUI.framework in Frameworks */,
-				97DB2C652A065C180037C59D /* WidgetKit.framework in Frameworks */,
+				97DB2CA42A068C450037C59D /* SwiftUI.framework in Frameworks */,
+				97DB2CA32A068C450037C59D /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +137,7 @@
 				97DB2C1329F928F10037C59D /* ComfortablePandAiOS */,
 				97DB2C2529F928F20037C59D /* ComfortablePandAiOSTests */,
 				97DB2C2F29F928F20037C59D /* ComfortablePandAiOSUITests */,
-				97DB2C682A065C180037C59D /* PandAssist Widget */,
+				97DB2CA52A068C450037C59D /* PandAssist Widget */,
 				97DB2C632A065C180037C59D /* Frameworks */,
 				97DB2C1229F928F10037C59D /* Products */,
 			);
@@ -153,7 +149,7 @@
 				97DB2C1129F928F10037C59D /* ComfortablePandAiOS.app */,
 				97DB2C2229F928F20037C59D /* ComfortablePandAiOSTests.xctest */,
 				97DB2C2C29F928F20037C59D /* ComfortablePandAiOSUITests.xctest */,
-				97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */,
+				97DB2CA22A068C450037C59D /* PandAssist WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,28 +220,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		97DB2C682A065C180037C59D /* PandAssist Widget */ = {
-			isa = PBXGroup;
-			children = (
-				97DB2C7C2A067BB80037C59D /* View */,
-				97DB2C692A065C180037C59D /* PandAssist_WidgetBundle.swift */,
-				97DB2C6B2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift */,
-				97DB2C6D2A065C180037C59D /* PandAssist_Widget.swift */,
-				97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */,
-				97DB2C702A065C1A0037C59D /* Assets.xcassets */,
-				97DB2C722A065C1A0037C59D /* Info.plist */,
-			);
-			path = "PandAssist Widget";
-			sourceTree = "<group>";
-		};
-		97DB2C7C2A067BB80037C59D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				97DB2C7D2A067BD90037C59D /* WidgetMainView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		97DB2C7F2A0686580037C59D /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +227,26 @@
 				97DB2C822A06875A0037C59D /* colors.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		97DB2CA52A068C450037C59D /* PandAssist Widget */ = {
+			isa = PBXGroup;
+			children = (
+				97DB2CB62A068D1A0037C59D /* View */,
+				97DB2CA62A068C450037C59D /* PandAssist_WidgetBundle.swift */,
+				97DB2CA82A068C450037C59D /* PandAssist_Widget.swift */,
+				97DB2CAA2A068C470037C59D /* Assets.xcassets */,
+				97DB2CAC2A068C470037C59D /* Info.plist */,
+			);
+			path = "PandAssist Widget";
+			sourceTree = "<group>";
+		};
+		97DB2CB62A068D1A0037C59D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97DB2CB92A068D450037C59D /* WidgetView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +264,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				97DB2C762A065C1A0037C59D /* PBXTargetDependency */,
+				97DB2CAE2A068C470037C59D /* PBXTargetDependency */,
 			);
 			name = ComfortablePandAiOS;
 			productName = ComfortablePandAiOS;
@@ -313,13 +307,13 @@
 			productReference = 97DB2C2C29F928F20037C59D /* ComfortablePandAiOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		97DB2C612A065C180037C59D /* PandAssist WidgetExtension */ = {
+		97DB2CA12A068C450037C59D /* PandAssist WidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97DB2C782A065C1A0037C59D /* Build configuration list for PBXNativeTarget "PandAssist WidgetExtension" */;
+			buildConfigurationList = 97DB2CB02A068C470037C59D /* Build configuration list for PBXNativeTarget "PandAssist WidgetExtension" */;
 			buildPhases = (
-				97DB2C5E2A065C180037C59D /* Sources */,
-				97DB2C5F2A065C180037C59D /* Frameworks */,
-				97DB2C602A065C180037C59D /* Resources */,
+				97DB2C9E2A068C450037C59D /* Sources */,
+				97DB2C9F2A068C450037C59D /* Frameworks */,
+				97DB2CA02A068C450037C59D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -327,7 +321,7 @@
 			);
 			name = "PandAssist WidgetExtension";
 			productName = "PandAssist WidgetExtension";
-			productReference = 97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */;
+			productReference = 97DB2CA22A068C450037C59D /* PandAssist WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -351,7 +345,7 @@
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 97DB2C1029F928F10037C59D;
 					};
-					97DB2C612A065C180037C59D = {
+					97DB2CA12A068C450037C59D = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -372,7 +366,7 @@
 				97DB2C1029F928F10037C59D /* ComfortablePandAiOS */,
 				97DB2C2129F928F20037C59D /* ComfortablePandAiOSTests */,
 				97DB2C2B29F928F20037C59D /* ComfortablePandAiOSUITests */,
-				97DB2C612A065C180037C59D /* PandAssist WidgetExtension */,
+				97DB2CA12A068C450037C59D /* PandAssist WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -401,11 +395,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97DB2C602A065C180037C59D /* Resources */ = {
+		97DB2CA02A068C450037C59D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97DB2C712A065C1A0037C59D /* Assets.xcassets in Resources */,
+				97DB2CAB2A068C470037C59D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,9 +412,8 @@
 			files = (
 				97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */,
 				97DB2C1729F928F10037C59D /* ContentView.swift in Sources */,
-				97DB2C742A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */,
+				97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
-				97DB2C7E2A067BD90037C59D /* WidgetMainView.swift in Sources */,
 				97DB2C482A0654A10037C59D /* MainView.swift in Sources */,
 				97DB2C4129F936150037C59D /* EntryView.swift in Sources */,
 				97DB2C832A06875A0037C59D /* colors.swift in Sources */,
@@ -445,17 +438,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97DB2C5E2A065C180037C59D /* Sources */ = {
+		97DB2C9E2A068C450037C59D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97DB2C862A0688210037C59D /* Entry.swift in Sources */,
-				97DB2C732A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */,
-				97DB2C852A06881B0037C59D /* dates.swift in Sources */,
-				97DB2C842A06875A0037C59D /* colors.swift in Sources */,
-				97DB2C6C2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift in Sources */,
-				97DB2C6A2A065C180037C59D /* PandAssist_WidgetBundle.swift in Sources */,
-				97DB2C6E2A065C180037C59D /* PandAssist_Widget.swift in Sources */,
+				97DB2CBB2A068D920037C59D /* WidgetView.swift in Sources */,
+				97DB2CB52A068C540037C59D /* Entry.swift in Sources */,
+				97DB2CA72A068C450037C59D /* PandAssist_WidgetBundle.swift in Sources */,
+				97DB2CB32A068C4E0037C59D /* colors.swift in Sources */,
+				97DB2CA92A068C450037C59D /* PandAssist_Widget.swift in Sources */,
+				97DB2CB42A068C500037C59D /* dates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,10 +464,10 @@
 			target = 97DB2C1029F928F10037C59D /* ComfortablePandAiOS */;
 			targetProxy = 97DB2C2D29F928F20037C59D /* PBXContainerItemProxy */;
 		};
-		97DB2C762A065C1A0037C59D /* PBXTargetDependency */ = {
+		97DB2CAE2A068C470037C59D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 97DB2C612A065C180037C59D /* PandAssist WidgetExtension */;
-			targetProxy = 97DB2C752A065C1A0037C59D /* PBXContainerItemProxy */;
+			target = 97DB2CA12A068C450037C59D /* PandAssist WidgetExtension */;
+			targetProxy = 97DB2CAD2A068C470037C59D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -757,7 +749,7 @@
 			};
 			name = Release;
 		};
-		97DB2C792A065C1A0037C59D /* Debug */ = {
+		97DB2CB12A068C470037C59D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -786,7 +778,7 @@
 			};
 			name = Debug;
 		};
-		97DB2C7A2A065C1A0037C59D /* Release */ = {
+		97DB2CB22A068C470037C59D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -855,11 +847,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97DB2C782A065C1A0037C59D /* Build configuration list for PBXNativeTarget "PandAssist WidgetExtension" */ = {
+		97DB2CB02A068C470037C59D /* Build configuration list for PBXNativeTarget "PandAssist WidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97DB2C792A065C1A0037C59D /* Debug */,
-				97DB2C7A2A065C1A0037C59D /* Release */,
+				97DB2CB12A068C470037C59D /* Debug */,
+				97DB2CB22A068C470037C59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

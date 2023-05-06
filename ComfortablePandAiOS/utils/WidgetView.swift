@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WidgetMainView: View {
+struct WidgetView: View {
     @State var entries: [EntryModel]
     
     var body: some View {
@@ -85,14 +85,17 @@ struct WidgetHeaderView: View {
     }
 }
 
-struct WidgetMainView_Previews: PreviewProvider {
+struct WidgetView_Previews: PreviewProvider {
+    static var previews: some View {
+        WidgetView(entries: WidgetView.demoEntries)
+    }
+}
+
+extension WidgetView {
     static var demoEntries = [
         EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
         EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
         EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
         EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true)
     ]
-    static var previews: some View {
-        WidgetMainView(entries: demoEntries)
-    }
 }
