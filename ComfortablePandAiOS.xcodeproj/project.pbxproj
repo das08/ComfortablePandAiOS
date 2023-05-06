@@ -16,6 +16,7 @@
 		97DB2C3329F928F20037C59D /* ComfortablePandAiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C3229F928F20037C59D /* ComfortablePandAiOSUITestsLaunchTests.swift */; };
 		97DB2C4129F936150037C59D /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4029F936150037C59D /* EntryView.swift */; };
 		97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4529F95B9F0037C59D /* Entry.swift */; };
+		97DB2C482A0654A10037C59D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C472A0654A10037C59D /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		97DB2C3229F928F20037C59D /* ComfortablePandAiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfortablePandAiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		97DB2C4029F936150037C59D /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		97DB2C4529F95B9F0037C59D /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		97DB2C472A0654A10037C59D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				97DB2C4029F936150037C59D /* EntryView.swift */,
+				97DB2C472A0654A10037C59D /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */,
 				97DB2C1729F928F10037C59D /* ContentView.swift in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
+				97DB2C482A0654A10037C59D /* MainView.swift in Sources */,
 				97DB2C4129F936150037C59D /* EntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

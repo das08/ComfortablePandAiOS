@@ -8,43 +8,48 @@
 import SwiftUI
 
 struct EntryView: View {
-    @State var checked: Bool
+    @State var entry: EntryModel
     var body: some View {
         ZStack(alignment: .topLeading) {
-            CourseNameView()
+//            CourseNameView()
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    CheckBoxView(checked: $checked)
+                    CourseNameView(courseName: entry.courseInfo.courseName)
+                    Spacer()
+                    DeadlineView()
+                }
+                .offset(x:-5)
+                .offset(y:-5)
+                HStack(alignment: .center) {
+                    CheckBoxView(checked: $entry.hasFinished)
                         .onTapGesture {
-                            if self.checked {
+                            if entry.hasFinished {
                                 withAnimation(.easeIn(duration: 0.2)) {
-                                    self.checked.toggle()
+                                    entry.hasFinished.toggle()
                                 }
                             } else {
                                 withAnimation {
-                                    self.checked.toggle()
+                                    entry.hasFinished.toggle()
                                 }
                             }
                         }
-                        .padding(.leading, -10)
-                    DeadlineView()
+                    EntryTitleView(title: entry.title)
                 }
-                .padding(.top, 5)
-                EntryTitleView()
             }
             .padding()
-            .overlay(RoundedRectangle(cornerRadius: 15)
-                .stroke(.black, lineWidth: 3))
-            .clipShape(RoundedRectangle(cornerRadius: 15))
         }
-        .padding(.all, 5)
-        
+        .frame(maxWidth: .infinity, alignment: .leading)
+//        .padding(2)
+//        .background(Rectangle().fill(Color.white))
+//        .cornerRadius(10)
+//        .shadow(color: .gray, radius: 1, x: 1, y: 1)
     }
 }
 
 struct CourseNameView: View {
+    var courseName: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(courseName)
             .font(.system(size: 15))
             .fontWeight(.bold)
             .foregroundColor(.white)
@@ -54,9 +59,6 @@ struct CourseNameView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .fill(Color.brown)
             )
-            .offset(x:-5)
-            .offset(y:-12)
-            .zIndex(1)
     }
 }
 
@@ -83,31 +85,25 @@ struct CheckBoxView: View {
 }
 
 struct DeadlineView: View {
+    @State var showDueDate: Bool = true
     var body: some View {
-        HStack {
-            Text("2023/04/08 8:30")
-                .font(.system(size: 15))
-                .fontWeight(.bold)
-                .foregroundColor(Color(red: 176/255 , green: 17/255, blue: 16/255))
-            Spacer()
-            Text("あと0日0時間55分")
-                .font(.system(size: 15))
-                .fontWeight(.bold)
-                .foregroundColor(Color(red: 100/255 , green: 100/255, blue: 100/255))
-        }
+        Text("2023/04/08 8:30")
+            .font(.system(size: 15))
+            .fontWeight(.bold)
+            .foregroundColor(Color(red: 176/255 , green: 17/255, blue: 16/255))
     }
 }
 
 struct EntryTitleView: View {
+    var title: String
     var body: some View {
-        Text("sss")
-            .padding(.leading, 35)
+        Text(title)
     }
 }
 
 
 struct EntryView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryView(checked: false)
+        EntryView(entry: EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", hasFinished: false))
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct EntryModel {
+struct EntryModel: Identifiable {
     enum EntryType {
         case Assignment
         case Quiz
@@ -16,7 +16,7 @@ struct EntryModel {
     }
     
     var entryType: EntryType
-    let entryId: String = UUID().uuidString
+    let id: String = UUID().uuidString
     var courseInfo: CourseInfo
     var title: String
     var description: String
@@ -36,12 +36,12 @@ struct EntryModel {
     }
 }
 
-struct CourseInfo {
-    var courseId: String
+struct CourseInfo: Identifiable {
+    var id: String
     var courseName: String
     
-    init(courseId: String, courseName: String) {
-        self.courseId = courseId
+    init(id: String, courseName: String) {
+        self.id = id
         self.courseName = courseName
     }
 }
