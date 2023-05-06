@@ -20,15 +20,18 @@ struct EntryModel: Identifiable {
     var courseInfo: CourseInfo
     var title: String
     var description: String
+    var dueDate: Date
     var hasFinished: Bool
-    var isNew: Bool = false
+    var isNew: Bool
     
-    init(entryType: EntryType, courseInfo: CourseInfo, title: String, description: String, hasFinished: Bool) {
+    init(entryType: EntryType, courseInfo: CourseInfo, title: String, description: String, dueDate: Date, hasFinished: Bool, isNew: Bool) {
         self.entryType = entryType
         self.courseInfo = courseInfo
         self.title = title
+        self.dueDate = dueDate
         self.description = description
         self.hasFinished = hasFinished
+        self.isNew = isNew
     }
     
     mutating func toggleHasFinished() {
