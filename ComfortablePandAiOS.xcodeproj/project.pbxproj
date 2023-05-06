@@ -14,6 +14,8 @@
 		97DB2C2729F928F20037C59D /* ComfortablePandAiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C2629F928F20037C59D /* ComfortablePandAiOSTests.swift */; };
 		97DB2C3129F928F20037C59D /* ComfortablePandAiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C3029F928F20037C59D /* ComfortablePandAiOSUITests.swift */; };
 		97DB2C3329F928F20037C59D /* ComfortablePandAiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C3229F928F20037C59D /* ComfortablePandAiOSUITestsLaunchTests.swift */; };
+		97DB2C4129F936150037C59D /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4029F936150037C59D /* EntryView.swift */; };
+		97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4529F95B9F0037C59D /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		97DB2C2C29F928F20037C59D /* ComfortablePandAiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComfortablePandAiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DB2C3029F928F20037C59D /* ComfortablePandAiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfortablePandAiOSUITests.swift; sourceTree = "<group>"; };
 		97DB2C3229F928F20037C59D /* ComfortablePandAiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfortablePandAiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		97DB2C4029F936150037C59D /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		97DB2C4529F95B9F0037C59D /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		97DB2C1329F928F10037C59D /* ComfortablePandAiOS */ = {
 			isa = PBXGroup;
 			children = (
+				97DB2C4429F945140037C59D /* Model */,
+				97DB2C3F29F935E80037C59D /* View */,
 				97DB2C1429F928F10037C59D /* ComfortablePandAiOSApp.swift */,
 				97DB2C1629F928F10037C59D /* ContentView.swift */,
 				97DB2C1829F928F20037C59D /* Assets.xcassets */,
@@ -127,6 +133,22 @@
 				97DB2C3229F928F20037C59D /* ComfortablePandAiOSUITestsLaunchTests.swift */,
 			);
 			path = ComfortablePandAiOSUITests;
+			sourceTree = "<group>";
+		};
+		97DB2C3F29F935E80037C59D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97DB2C4029F936150037C59D /* EntryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		97DB2C4429F945140037C59D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97DB2C4529F95B9F0037C59D /* Entry.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */,
 				97DB2C1729F928F10037C59D /* ContentView.swift in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
+				97DB2C4129F936150037C59D /* EntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
