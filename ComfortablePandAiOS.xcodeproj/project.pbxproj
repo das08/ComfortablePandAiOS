@@ -17,6 +17,15 @@
 		97DB2C4129F936150037C59D /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4029F936150037C59D /* EntryView.swift */; };
 		97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4529F95B9F0037C59D /* Entry.swift */; };
 		97DB2C482A0654A10037C59D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C472A0654A10037C59D /* MainView.swift */; };
+		97DB2C652A065C180037C59D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DB2C642A065C180037C59D /* WidgetKit.framework */; };
+		97DB2C672A065C180037C59D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DB2C662A065C180037C59D /* SwiftUI.framework */; };
+		97DB2C6A2A065C180037C59D /* PandAssist_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C692A065C180037C59D /* PandAssist_WidgetBundle.swift */; };
+		97DB2C6C2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6B2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift */; };
+		97DB2C6E2A065C180037C59D /* PandAssist_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6D2A065C180037C59D /* PandAssist_Widget.swift */; };
+		97DB2C712A065C1A0037C59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97DB2C702A065C1A0037C59D /* Assets.xcassets */; };
+		97DB2C732A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */; };
+		97DB2C742A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */; };
+		97DB2C772A065C1A0037C59D /* PandAssist WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +43,28 @@
 			remoteGlobalIDString = 97DB2C1029F928F10037C59D;
 			remoteInfo = ComfortablePandAiOS;
 		};
+		97DB2C752A065C1A0037C59D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97DB2C0929F928F10037C59D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97DB2C612A065C180037C59D;
+			remoteInfo = "PandAssist WidgetExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		97DB2C7B2A065C1A0037C59D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				97DB2C772A065C1A0037C59D /* PandAssist WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		97DB2C1129F928F10037C59D /* ComfortablePandAiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComfortablePandAiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +81,15 @@
 		97DB2C4029F936150037C59D /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		97DB2C4529F95B9F0037C59D /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		97DB2C472A0654A10037C59D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PandAssist WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97DB2C642A065C180037C59D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		97DB2C662A065C180037C59D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		97DB2C692A065C180037C59D /* PandAssist_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_WidgetBundle.swift; sourceTree = "<group>"; };
+		97DB2C6B2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_WidgetLiveActivity.swift; sourceTree = "<group>"; };
+		97DB2C6D2A065C180037C59D /* PandAssist_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandAssist_Widget.swift; sourceTree = "<group>"; };
+		97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PandAssist_Widget.intentdefinition; sourceTree = "<group>"; };
+		97DB2C702A065C1A0037C59D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97DB2C722A065C1A0037C59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +114,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97DB2C5F2A065C180037C59D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97DB2C672A065C180037C59D /* SwiftUI.framework in Frameworks */,
+				97DB2C652A065C180037C59D /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +132,8 @@
 				97DB2C1329F928F10037C59D /* ComfortablePandAiOS */,
 				97DB2C2529F928F20037C59D /* ComfortablePandAiOSTests */,
 				97DB2C2F29F928F20037C59D /* ComfortablePandAiOSUITests */,
+				97DB2C682A065C180037C59D /* PandAssist Widget */,
+				97DB2C632A065C180037C59D /* Frameworks */,
 				97DB2C1229F928F10037C59D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +144,7 @@
 				97DB2C1129F928F10037C59D /* ComfortablePandAiOS.app */,
 				97DB2C2229F928F20037C59D /* ComfortablePandAiOSTests.xctest */,
 				97DB2C2C29F928F20037C59D /* ComfortablePandAiOSUITests.xctest */,
+				97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +205,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		97DB2C632A065C180037C59D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97DB2C642A065C180037C59D /* WidgetKit.framework */,
+				97DB2C662A065C180037C59D /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97DB2C682A065C180037C59D /* PandAssist Widget */ = {
+			isa = PBXGroup;
+			children = (
+				97DB2C692A065C180037C59D /* PandAssist_WidgetBundle.swift */,
+				97DB2C6B2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift */,
+				97DB2C6D2A065C180037C59D /* PandAssist_Widget.swift */,
+				97DB2C6F2A065C180037C59D /* PandAssist_Widget.intentdefinition */,
+				97DB2C702A065C1A0037C59D /* Assets.xcassets */,
+				97DB2C722A065C1A0037C59D /* Info.plist */,
+			);
+			path = "PandAssist Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,10 +237,12 @@
 				97DB2C0D29F928F10037C59D /* Sources */,
 				97DB2C0E29F928F10037C59D /* Frameworks */,
 				97DB2C0F29F928F10037C59D /* Resources */,
+				97DB2C7B2A065C1A0037C59D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				97DB2C762A065C1A0037C59D /* PBXTargetDependency */,
 			);
 			name = ComfortablePandAiOS;
 			productName = ComfortablePandAiOS;
@@ -210,6 +285,23 @@
 			productReference = 97DB2C2C29F928F20037C59D /* ComfortablePandAiOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		97DB2C612A065C180037C59D /* PandAssist WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97DB2C782A065C1A0037C59D /* Build configuration list for PBXNativeTarget "PandAssist WidgetExtension" */;
+			buildPhases = (
+				97DB2C5E2A065C180037C59D /* Sources */,
+				97DB2C5F2A065C180037C59D /* Frameworks */,
+				97DB2C602A065C180037C59D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PandAssist WidgetExtension";
+			productName = "PandAssist WidgetExtension";
+			productReference = 97DB2C622A065C180037C59D /* PandAssist WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -231,6 +323,9 @@
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 97DB2C1029F928F10037C59D;
 					};
+					97DB2C612A065C180037C59D = {
+						CreatedOnToolsVersion = 14.2;
+					};
 				};
 			};
 			buildConfigurationList = 97DB2C0C29F928F10037C59D /* Build configuration list for PBXProject "ComfortablePandAiOS" */;
@@ -249,6 +344,7 @@
 				97DB2C1029F928F10037C59D /* ComfortablePandAiOS */,
 				97DB2C2129F928F20037C59D /* ComfortablePandAiOSTests */,
 				97DB2C2B29F928F20037C59D /* ComfortablePandAiOSUITests */,
+				97DB2C612A065C180037C59D /* PandAssist WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -277,6 +373,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97DB2C602A065C180037C59D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97DB2C712A065C1A0037C59D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,6 +390,7 @@
 			files = (
 				97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */,
 				97DB2C1729F928F10037C59D /* ContentView.swift in Sources */,
+				97DB2C742A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
 				97DB2C482A0654A10037C59D /* MainView.swift in Sources */,
 				97DB2C4129F936150037C59D /* EntryView.swift in Sources */,
@@ -309,6 +414,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97DB2C5E2A065C180037C59D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97DB2C732A065C1A0037C59D /* PandAssist_Widget.intentdefinition in Sources */,
+				97DB2C6C2A065C180037C59D /* PandAssist_WidgetLiveActivity.swift in Sources */,
+				97DB2C6A2A065C180037C59D /* PandAssist_WidgetBundle.swift in Sources */,
+				97DB2C6E2A065C180037C59D /* PandAssist_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -321,6 +437,11 @@
 			isa = PBXTargetDependency;
 			target = 97DB2C1029F928F10037C59D /* ComfortablePandAiOS */;
 			targetProxy = 97DB2C2D29F928F20037C59D /* PBXContainerItemProxy */;
+		};
+		97DB2C762A065C1A0037C59D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97DB2C612A065C180037C59D /* PandAssist WidgetExtension */;
+			targetProxy = 97DB2C752A065C1A0037C59D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -437,6 +558,7 @@
 		97DB2C3729F928F20037C59D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ComfortablePandAiOS/ComfortablePandAiOS.entitlements;
@@ -462,7 +584,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.das08.ComfortablePandAiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.das08.PandAssist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -475,6 +597,7 @@
 		97DB2C3829F928F20037C59D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ComfortablePandAiOS/ComfortablePandAiOS.entitlements;
@@ -500,7 +623,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.das08.ComfortablePandAiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.das08.PandAssist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -600,6 +723,65 @@
 			};
 			name = Release;
 		};
+		97DB2C792A065C1A0037C59D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V6B4TS7288;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PandAssist Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PandAssist Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.das08.PandAssist.PandAssist-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97DB2C7A2A065C1A0037C59D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V6B4TS7288;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PandAssist Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PandAssist Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.das08.PandAssist.PandAssist-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -635,6 +817,15 @@
 			buildConfigurations = (
 				97DB2C3D29F928F20037C59D /* Debug */,
 				97DB2C3E29F928F20037C59D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97DB2C782A065C1A0037C59D /* Build configuration list for PBXNativeTarget "PandAssist WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97DB2C792A065C1A0037C59D /* Debug */,
+				97DB2C7A2A065C1A0037C59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
