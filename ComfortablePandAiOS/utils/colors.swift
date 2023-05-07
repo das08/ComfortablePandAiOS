@@ -23,7 +23,7 @@ func getBadgeColor(dueDate: Date) -> Color {
     let badgeColor: Color
     let dueColor = DueDateColor()
     
-    let days = getTimeRemain(dueDate: dueDate).days
+    let days = getTimeRemain(dueDate).days
     
     switch days {
     case ..<0:

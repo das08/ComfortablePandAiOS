@@ -20,7 +20,7 @@ struct WidgetView: View {
             VStack(alignment:.leading, spacing:5){
                 ForEach(entries){entry in
                     
-                    let time = getTimeRemain(dueDate: entry.dueDate)
+                    let time = getTimeRemain(entry.dueDate)
                     let daysUntil = getDaysUntil(dueDate: entry.dueDate)
                     
                     VStack(alignment:.leading, spacing:0){

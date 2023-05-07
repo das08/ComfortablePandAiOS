@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct kadaiDueDate: Codable {
+struct RemainTime: Codable {
     let days: Int
     let hour: Int
     let minute: Int
 }
 
-func getTimeRemain(dueDate: Date) -> kadaiDueDate {
+func getTimeRemain(_ dueDate: Date) -> RemainTime {
     let currentDate = Date()
     let timeDiff = dueDate-currentDate
     let days = floor(Double(timeDiff.second!) / (3600 * 24))
     let hours = floor((Double(timeDiff.second!) - (days * 3600 * 24)) / 3600)
     let minutes = floor((Double(timeDiff.second!) - (days * 3600 * 24 + hours * 3600)) / 60)
-    return kadaiDueDate(days: Int(days), hour: Int(hours), minute: Int(minutes))
+    return RemainTime(days: Int(days), hour: Int(hours), minute: Int(minutes))
 }
 
 func getDaysUntil(dueDate: Date) -> Int {
@@ -42,7 +42,7 @@ func formatDate(date: Date) -> String {
     return df.string(from: date)
 }
 
-func dispRemainTime(time: kadaiDueDate) -> String {
+func dispRemainTime(time: RemainTime) -> String {
     var remainTime: String
     
     if time.days < 0 {

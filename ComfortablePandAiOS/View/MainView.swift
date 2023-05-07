@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var viewModel = EntryViewModel()
+    @StateObject var viewModel = EntryViewModel()
+    @ObservedObject var statsViewModel = StatsViewModel()
+    
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.systemFont(ofSize: 26)]
         UINavigationBar.appearance().barTintColor = UIColor.white
@@ -31,7 +33,7 @@ struct MainView: View {
                     .navigationBarTitle(Text("🐼"), displayMode: .inline)
                     .navigationBarItems(
                         trailing: VStack{
-                            Text("取得: 23分前")
+                            Text(statsViewModel.getAccessedTime())
                         }
                         .padding(.bottom, 10)
                     )

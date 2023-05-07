@@ -31,6 +31,10 @@
 		97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CB92A068D450037C59D /* WidgetView.swift */; };
 		97DB2CBB2A068D920037C59D /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CB92A068D450037C59D /* WidgetView.swift */; };
 		97DB2CBE2A073CF50037C59D /* EntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CBD2A073CF50037C59D /* EntryViewModel.swift */; };
+		97DB2CC12A0747C80037C59D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CC02A0747C80037C59D /* Realm */; };
+		97DB2CC32A0747C80037C59D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CC22A0747C80037C59D /* RealmSwift */; };
+		97DB2CC52A076F800037C59D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CC42A076F800037C59D /* Stats.swift */; };
+		97DB2CC72A0772950037C59D /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CC62A0772950037C59D /* StatsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,8 @@
 		97DB2CAC2A068C470037C59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DB2CB92A068D450037C59D /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WidgetView.swift; path = ComfortablePandAiOS/utils/WidgetView.swift; sourceTree = SOURCE_ROOT; };
 		97DB2CBD2A073CF50037C59D /* EntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewModel.swift; sourceTree = "<group>"; };
+		97DB2CC42A076F800037C59D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		97DB2CC62A0772950037C59D /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DB2CC32A0747C80037C59D /* RealmSwift in Frameworks */,
+				97DB2CC12A0747C80037C59D /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				97DB2C4529F95B9F0037C59D /* Entry.swift */,
+				97DB2CC42A076F800037C59D /* Stats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				97DB2CBD2A073CF50037C59D /* EntryViewModel.swift */,
+				97DB2CC62A0772950037C59D /* StatsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -278,6 +288,10 @@
 				97DB2CAE2A068C470037C59D /* PBXTargetDependency */,
 			);
 			name = ComfortablePandAiOS;
+			packageProductDependencies = (
+				97DB2CC02A0747C80037C59D /* Realm */,
+				97DB2CC22A0747C80037C59D /* RealmSwift */,
+			);
 			productName = ComfortablePandAiOS;
 			productReference = 97DB2C1129F928F10037C59D /* ComfortablePandAiOS.app */;
 			productType = "com.apple.product-type.application";
@@ -370,6 +384,9 @@
 				Base,
 			);
 			mainGroup = 97DB2C0829F928F10037C59D;
+			packageReferences = (
+				97DB2CBF2A0747C80037C59D /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 97DB2C1229F928F10037C59D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -422,9 +439,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				97DB2C4629F95B9F0037C59D /* Entry.swift in Sources */,
+				97DB2CC52A076F800037C59D /* Stats.swift in Sources */,
 				97DB2C1729F928F10037C59D /* ContentView.swift in Sources */,
 				97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
+				97DB2CC72A0772950037C59D /* StatsViewModel.swift in Sources */,
 				97DB2C482A0654A10037C59D /* MainView.swift in Sources */,
 				97DB2C4129F936150037C59D /* EntryView.swift in Sources */,
 				97DB2CBE2A073CF50037C59D /* EntryViewModel.swift in Sources */,
@@ -869,6 +888,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		97DB2CBF2A0747C80037C59D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		97DB2CC02A0747C80037C59D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97DB2CBF2A0747C80037C59D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		97DB2CC22A0747C80037C59D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97DB2CBF2A0747C80037C59D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97DB2C0929F928F10037C59D /* Project object */;
 }
