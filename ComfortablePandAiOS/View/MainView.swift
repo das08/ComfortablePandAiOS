@@ -8,22 +8,20 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var entries: [EntryModel]
-    init(entries: [EntryModel]) {
+    @ObservedObject var viewModel = EntryViewModel()
+    init() {
         UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.systemFont(ofSize: 26)]
         UINavigationBar.appearance().barTintColor = UIColor.white
         UINavigationBar.appearance().backgroundColor = UIColor.white
         UITabBar.appearance().barTintColor = UIColor.white
         UITabBar.appearance().backgroundColor = UIColor.white
-        
-        self.entries = entries
     }
     var body: some View {
         TabView {
             NavigationView {
                 ScrollView (.vertical, showsIndicators: false) {
                     VStack {
-                        ForEach(entries) { entry in
+                        ForEach(viewModel.entries) { entry in
                             EntryView(entry: entry)
                             Divider()
                         }
@@ -66,15 +64,6 @@ struct IconView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(entries: MainView.demoEntries)
+        MainView()
     }
-}
-
-extension MainView {
-    static var demoEntries = [
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true)
-    ]
 }

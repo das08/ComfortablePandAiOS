@@ -35,7 +35,7 @@ struct WidgetView: View {
                                     .padding(.vertical, 3)
                                     .background(
                                         RoundedRectangle(cornerRadius: 10)
-                                            .fill(getBadgeColor(days: daysUntil))
+                                            .fill(getBadgeColor(dueDate: entry.dueDate))
                                     )
                                     .padding(.horizontal, 5)
                                 Text(dispRemainTime(time: time))

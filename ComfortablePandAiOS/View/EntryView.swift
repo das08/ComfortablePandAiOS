@@ -14,9 +14,9 @@ struct EntryView: View {
 //            CourseNameView()
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    CourseNameView(courseName: entry.courseInfo.courseName)
+                    CourseNameView(entry: entry)
                     Spacer()
-                    DeadlineView()
+                    DeadlineView(dueDate: entry.dueDate)
                 }
                 .offset(x:-5)
                 .offset(y:-5)
@@ -47,9 +47,9 @@ struct EntryView: View {
 }
 
 struct CourseNameView: View {
-    var courseName: String
+    var entry: EntryModel
     var body: some View {
-        Text(courseName)
+        Text(entry.courseInfo.courseName)
             .font(.system(size: 15))
             .fontWeight(.bold)
             .foregroundColor(.white)
@@ -57,7 +57,7 @@ struct CourseNameView: View {
             .padding(.vertical, 5)
             .background(
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(Color.brown)
+                    .fill(getBadgeColor(dueDate: entry.dueDate))
             )
     }
 }
@@ -86,8 +86,9 @@ struct CheckBoxView: View {
 
 struct DeadlineView: View {
     @State var showDueDate: Bool = true
+    var dueDate: Date
     var body: some View {
-        Text("2023/04/08 8:30")
+        Text(formatDate(date: dueDate))
             .font(.system(size: 15))
             .fontWeight(.bold)
             .foregroundColor(Color(red: 176/255 , green: 17/255, blue: 16/255))

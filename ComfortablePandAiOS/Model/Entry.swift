@@ -48,3 +48,16 @@ struct CourseInfo: Identifiable {
         self.courseName = courseName
     }
 }
+
+struct DemoEntry {
+    private static let days14 = Calendar.current.date(byAdding: .day, value: 14, to: Date())!
+    private static let days5 = Calendar.current.date(byAdding: .day, value: 5, to: Date())!
+    private static let hours24 = Calendar.current.date(byAdding: .hour, value: 24, to: Date())!
+    static var entries = [
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: hours24, hasFinished: false, isNew: true),
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: days5, hasFinished: false, isNew: true),
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: days14, hasFinished: false, isNew: true),
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: days14, hasFinished: false, isNew: true)
+    ]
+}
+

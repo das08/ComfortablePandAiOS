@@ -36,7 +36,7 @@ func getDaysUntil(dueDate: Date) -> Int {
     return daysUntil
 }
 
-func dispDate(date: Date) -> String {
+func formatDate(date: Date) -> String {
     let df = DateFormatter()
     df.dateFormat = "yyyy/MM/dd HH:mm"
     return df.string(from: date)

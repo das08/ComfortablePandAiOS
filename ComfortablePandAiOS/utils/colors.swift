@@ -19,9 +19,11 @@ struct DueDateColor {
     let black: Color = Color(red: 10/255 , green: 10/255, blue: 10/255)
 }
 
-func getBadgeColor(days: Int) -> Color {
+func getBadgeColor(dueDate: Date) -> Color {
     let badgeColor: Color
     let dueColor = DueDateColor()
+    
+    let days = getTimeRemain(dueDate: dueDate).days
     
     switch days {
     case ..<0:
