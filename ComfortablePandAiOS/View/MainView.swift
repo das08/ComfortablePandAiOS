@@ -9,11 +9,9 @@ import SwiftUI
 import RealmSwift
 
 struct MainView: View {
-//    @StateObject var entriesViewModel = EntriesViewModel()
-//    @ObservedResults(EntryModel.self) var entries
     let manager = RealmManager()
     @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
-    @ObservedObject var statsViewModel = StatsViewModel()
+    @ObservedResults(StatsModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var stats
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.systemFont(ofSize: 26)]
@@ -37,7 +35,7 @@ struct MainView: View {
                     .navigationBarTitle(Text("🐼"), displayMode: .inline)
                     .navigationBarItems(
                         trailing: VStack{
-                            Text(statsViewModel.getAccessedTime())
+                            Text(stats.first!.formatLastAccessed())
                         }
                         .padding(.bottom, 10)
                     )

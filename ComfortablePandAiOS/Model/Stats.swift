@@ -6,15 +6,26 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct StatsModel {
-    var userName: String
-    var lastAccessedTime: Date
+class StatsModel: Object, ObjectKeyIdentifiable {
+    @Persisted var userName: String
+    @Persisted var lastAccessedTime: Date?
+    
+    override init() {
+        self.userName = "---"
+        self.lastAccessedTime = nil
+    }
 }
 
 extension StatsModel {
     func formatLastAccessed() -> String {
-        var remain = getTimeRemain(self.lastAccessedTime)
+        guard let lastAccessedTime = self.lastAccessedTime
+        else {
+            return "未取得"
+        }
+        
+        var remain = getTimeRemain(lastAccessedTime)
         if remain.days > 0 {
             return String(format: "%d日前", arguments: [remain.days])
         }

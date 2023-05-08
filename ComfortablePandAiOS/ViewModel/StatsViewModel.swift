@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-class StatsViewModel: ObservableObject {
-    @Published var statsModel: StatsModel
-    
-    init() {
-        self.statsModel = StatsModel(userName: "dummy", lastAccessedTime: Date())
-    }
-    
-    func getAccessedTime() -> String {
-        return self.statsModel.formatLastAccessed()
-    }
-}
+//class StatsViewModel: ObservableObject {
+//    @Published var statsModel: StatsModel
+//
+//    init() {
+//        self.statsModel = StatsModel(userName: "dummy", lastAccessedTime: Date())
+//    }
+//
+//    func getAccessedTime() -> String {
+//        return self.statsModel.formatLastAccessed()
+//    }
+//}

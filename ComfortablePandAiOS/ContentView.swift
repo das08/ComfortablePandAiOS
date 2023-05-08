@@ -11,8 +11,8 @@ import WidgetKit
 
 struct ContentView: View {
     let realm = RealmManager().realm
-    let manager = RealmManager()
     @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
+    @ObservedResults(StatsModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var stats
     
     init() {
         let demoEntries = DemoEntry.entries
@@ -20,6 +20,12 @@ struct ContentView: View {
             print("creating new entries")
             try? realm.write {
               realm.add(demoEntries)
+            }
+        }
+        if stats.isEmpty {
+            print("creating new entries")
+            try? realm.write {
+              realm.add(StatsModel())
             }
         }
         WidgetCenter.shared.reloadAllTimelines()
