@@ -6,8 +6,21 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
+    @Environment(\.realm) var realm
+    @ObservedResults(EntryModel.self) var entries
+    
+    init() {
+        let demoEntries = DemoEntry.entries
+        if entries.isEmpty {
+            print("creating new entries")
+            try? realm.write {
+              realm.add(demoEntries)
+            }
+        }
+    }
     var body: some View {
         MainView()
     }

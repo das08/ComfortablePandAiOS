@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct MainView: View {
-    @StateObject var entriesViewModel = EntriesViewModel()
+//    @StateObject var entriesViewModel = EntriesViewModel()
+    @ObservedResults(EntryModel.self) var entries
     @ObservedObject var statsViewModel = StatsViewModel()
     
     init() {
@@ -23,7 +25,7 @@ struct MainView: View {
             NavigationView {
                 ScrollView (.vertical, showsIndicators: false) {
                     VStack {
-                        ForEach(entriesViewModel.entries) { entry in
+                        ForEach(entries) { entry in
                             EntryView(entry: entry)
                             Divider()
                         }

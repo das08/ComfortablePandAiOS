@@ -26,7 +26,7 @@ struct WidgetView: View {
                     VStack(alignment:.leading, spacing:0){
                         VStack(alignment:.leading, spacing:5){
                             HStack(spacing:0){
-                                Text(entry.courseInfo.courseName)
+                                Text(entry.getCourseName())
                                     .font(.system(size: 13))
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
@@ -93,9 +93,9 @@ struct WidgetView_Previews: PreviewProvider {
 
 extension WidgetView {
     static var demoEntries = [
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true)
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
+        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true)
     ]
 }

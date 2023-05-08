@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct EntryView: View {
-    @ObservedObject var entry: EntryModel
+    @ObservedRealmObject var entry: EntryModel
     var body: some View {
         ZStack(alignment: .topLeading) {
 //            CourseNameView()
@@ -25,11 +26,11 @@ struct EntryView: View {
                         .onTapGesture {
                             if entry.hasFinished {
                                 withAnimation(.easeIn(duration: 0.2)) {
-                                    entry.hasFinished.toggle()
+                                    $entry.hasFinished.wrappedValue.toggle()
                                 }
                             } else {
                                 withAnimation {
-                                    entry.hasFinished.toggle()
+                                    $entry.hasFinished.wrappedValue.toggle()
                                 }
                             }
                         }
@@ -39,17 +40,13 @@ struct EntryView: View {
             .padding()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-//        .padding(2)
-//        .background(Rectangle().fill(Color.white))
-//        .cornerRadius(10)
-//        .shadow(color: .gray, radius: 1, x: 1, y: 1)
     }
 }
 
 struct CourseNameView: View {
     var entry: EntryModel
     var body: some View {
-        Text(entry.courseInfo.courseName)
+        Text(entry.getCourseName())
             .font(.system(size: 15))
             .fontWeight(.bold)
             .foregroundColor(.white)
@@ -105,6 +102,6 @@ struct EntryTitleView: View {
 
 struct EntryView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryView(entry: EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", description: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true))
+        EntryView(entry: EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true))
     }
 }

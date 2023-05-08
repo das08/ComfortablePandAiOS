@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
-
-class EntriesViewModel: ObservableObject {
-    @Published var entryModels: [EntryModel] = []
-    
-    init() {
-        self.entryModels = DemoEntry.entries
-    }
-    
-    var entries: [EntryModel] {
-        entryModels
-    }
-}
+import RealmSwift
+//
+//class EntriesViewModel: Object, ObjectKeyIdentifiable {
+//    @Persisted var entryModels: [EntryModel] = []
+//
+//    init() {
+//        self.entryModels = DemoEntry.entries
+//    }
+//
+//    var entries: [EntryModel] {
+//        entryModels
+//    }
+//}
 
 //class EntryViewModel: ObservableObject {
 //    @Published var entry: EntryModel
