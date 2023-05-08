@@ -30,15 +30,14 @@
 		97DB2CB52A068C540037C59D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2C4529F95B9F0037C59D /* Entry.swift */; };
 		97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CB92A068D450037C59D /* WidgetView.swift */; };
 		97DB2CBB2A068D920037C59D /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CB92A068D450037C59D /* WidgetView.swift */; };
-		97DB2CBE2A073CF50037C59D /* EntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CBD2A073CF50037C59D /* EntriesViewModel.swift */; };
 		97DB2CC12A0747C80037C59D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CC02A0747C80037C59D /* Realm */; };
 		97DB2CC32A0747C80037C59D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CC22A0747C80037C59D /* RealmSwift */; };
 		97DB2CC52A076F800037C59D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CC42A076F800037C59D /* Stats.swift */; };
-		97DB2CC72A0772950037C59D /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CC62A0772950037C59D /* StatsViewModel.swift */; };
 		97DB2CC92A0925FD0037C59D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CC82A0925FD0037C59D /* Realm */; };
 		97DB2CCB2A0925FD0037C59D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CCA2A0925FD0037C59D /* RealmSwift */; };
 		97DB2CCE2A092FCC0037C59D /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CCD2A092FCC0037C59D /* Realm.swift */; };
 		97DB2CCF2A092FF20037C59D /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CCD2A092FCC0037C59D /* Realm.swift */; };
+		97DB2CD12A09355E0037C59D /* Sakai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CD02A09355E0037C59D /* Sakai.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,11 +103,10 @@
 		97DB2CAA2A068C470037C59D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97DB2CAC2A068C470037C59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DB2CB92A068D450037C59D /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WidgetView.swift; path = ComfortablePandAiOS/utils/WidgetView.swift; sourceTree = SOURCE_ROOT; };
-		97DB2CBD2A073CF50037C59D /* EntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewModel.swift; sourceTree = "<group>"; };
 		97DB2CC42A076F800037C59D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
-		97DB2CC62A0772950037C59D /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		97DB2CCC2A092F030037C59D /* PandAssist WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PandAssist WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		97DB2CCD2A092FCC0037C59D /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		97DB2CD02A09355E0037C59D /* Sakai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sakai.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +174,6 @@
 		97DB2C1329F928F10037C59D /* ComfortablePandAiOS */ = {
 			isa = PBXGroup;
 			children = (
-				97DB2CBC2A073CD80037C59D /* ViewModel */,
 				97DB2C7F2A0686580037C59D /* utils */,
 				97DB2C4429F945140037C59D /* Model */,
 				97DB2C3F29F935E80037C59D /* View */,
@@ -229,6 +226,7 @@
 				97DB2C4529F95B9F0037C59D /* Entry.swift */,
 				97DB2CC42A076F800037C59D /* Stats.swift */,
 				97DB2CCD2A092FCC0037C59D /* Realm.swift */,
+				97DB2CD02A09355E0037C59D /* Sakai.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,15 +267,6 @@
 				97DB2CB92A068D450037C59D /* WidgetView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		97DB2CBC2A073CD80037C59D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				97DB2CBD2A073CF50037C59D /* EntriesViewModel.swift */,
-				97DB2CC62A0772950037C59D /* StatsViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,10 +446,9 @@
 				97DB2C1729F928F10037C59D /* ContentView.swift in Sources */,
 				97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
-				97DB2CC72A0772950037C59D /* StatsViewModel.swift in Sources */,
+				97DB2CD12A09355E0037C59D /* Sakai.swift in Sources */,
 				97DB2C482A0654A10037C59D /* MainView.swift in Sources */,
 				97DB2C4129F936150037C59D /* EntryView.swift in Sources */,
-				97DB2CBE2A073CF50037C59D /* EntriesViewModel.swift in Sources */,
 				97DB2C832A06875A0037C59D /* colors.swift in Sources */,
 				97DB2C812A0686680037C59D /* dates.swift in Sources */,
 				97DB2CCE2A092FCC0037C59D /* Realm.swift in Sources */,
