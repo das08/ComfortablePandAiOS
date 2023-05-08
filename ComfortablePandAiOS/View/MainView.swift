@@ -10,7 +10,9 @@ import RealmSwift
 
 struct MainView: View {
 //    @StateObject var entriesViewModel = EntriesViewModel()
-    @ObservedResults(EntryModel.self) var entries
+//    @ObservedResults(EntryModel.self) var entries
+    let manager = RealmManager()
+    @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
     @ObservedObject var statsViewModel = StatsViewModel()
     
     init() {

@@ -43,7 +43,7 @@ struct PandAssist_WidgetEntryView : View {
     
     @ViewBuilder
     var body: some View {
-        WidgetView(entries: WidgetView.demoEntries)
+        WidgetView()
     }
 }
 

@@ -7,10 +7,12 @@
 
 import SwiftUI
 import RealmSwift
+import WidgetKit
 
 struct ContentView: View {
-    @Environment(\.realm) var realm
-    @ObservedResults(EntryModel.self) var entries
+    let realm = RealmManager().realm
+    let manager = RealmManager()
+    @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
     
     init() {
         let demoEntries = DemoEntry.entries
@@ -20,6 +22,7 @@ struct ContentView: View {
               realm.add(demoEntries)
             }
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
     var body: some View {
         MainView()

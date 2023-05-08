@@ -37,6 +37,8 @@
 		97DB2CC72A0772950037C59D /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CC62A0772950037C59D /* StatsViewModel.swift */; };
 		97DB2CC92A0925FD0037C59D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CC82A0925FD0037C59D /* Realm */; };
 		97DB2CCB2A0925FD0037C59D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CCA2A0925FD0037C59D /* RealmSwift */; };
+		97DB2CCE2A092FCC0037C59D /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CCD2A092FCC0037C59D /* Realm.swift */; };
+		97DB2CCF2A092FF20037C59D /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CCD2A092FCC0037C59D /* Realm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		97DB2CBD2A073CF50037C59D /* EntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewModel.swift; sourceTree = "<group>"; };
 		97DB2CC42A076F800037C59D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		97DB2CC62A0772950037C59D /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		97DB2CCC2A092F030037C59D /* PandAssist WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PandAssist WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		97DB2CCD2A092FCC0037C59D /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 		97DB2C0829F928F10037C59D = {
 			isa = PBXGroup;
 			children = (
+				97DB2CCC2A092F030037C59D /* PandAssist WidgetExtension.entitlements */,
 				97DB2C1329F928F10037C59D /* ComfortablePandAiOS */,
 				97DB2C2529F928F20037C59D /* ComfortablePandAiOSTests */,
 				97DB2C2F29F928F20037C59D /* ComfortablePandAiOSUITests */,
@@ -223,6 +228,7 @@
 			children = (
 				97DB2C4529F95B9F0037C59D /* Entry.swift */,
 				97DB2CC42A076F800037C59D /* Stats.swift */,
+				97DB2CCD2A092FCC0037C59D /* Realm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				97DB2CBE2A073CF50037C59D /* EntriesViewModel.swift in Sources */,
 				97DB2C832A06875A0037C59D /* colors.swift in Sources */,
 				97DB2C812A0686680037C59D /* dates.swift in Sources */,
+				97DB2CCE2A092FCC0037C59D /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +491,7 @@
 				97DB2CBB2A068D920037C59D /* WidgetView.swift in Sources */,
 				97DB2CB52A068C540037C59D /* Entry.swift in Sources */,
 				97DB2CA72A068C450037C59D /* PandAssist_WidgetBundle.swift in Sources */,
+				97DB2CCF2A092FF20037C59D /* Realm.swift in Sources */,
 				97DB2CB32A068C4E0037C59D /* colors.swift in Sources */,
 				97DB2CA92A068C450037C59D /* PandAssist_Widget.swift in Sources */,
 				97DB2CB42A068C500037C59D /* dates.swift in Sources */,
@@ -793,6 +801,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "PandAssist WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V6B4TS7288;
@@ -822,6 +831,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "PandAssist WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V6B4TS7288;

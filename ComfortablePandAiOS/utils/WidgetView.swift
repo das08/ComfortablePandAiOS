@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct WidgetView: View {
-    @State var entries: [EntryModel]
+    @Environment(\.realm) var realm
+    let manager = RealmManager()
+    @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
     
     var body: some View {
         VStack(alignment:.leading ,spacing: 0){
@@ -87,15 +90,6 @@ struct WidgetHeaderView: View {
 
 struct WidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetView(entries: WidgetView.demoEntries)
+        WidgetView()
     }
-}
-
-extension WidgetView {
-    static var demoEntries = [
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true),
-        EntryModel(entryType: .Assignment, courseInfo: CourseInfo(id: "abc123", courseName: "電気電子工学"), title: "課題1", detail: "課題1の詳細", dueDate: Date(), hasFinished: false, isNew: true)
-    ]
 }
