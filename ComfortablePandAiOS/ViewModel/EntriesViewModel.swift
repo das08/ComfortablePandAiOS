@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class EntryViewModel: ObservableObject {
+class EntriesViewModel: ObservableObject {
     @Published var entryModels: [EntryModel] = []
     
     init() {
@@ -18,4 +18,16 @@ class EntryViewModel: ObservableObject {
         entryModels
     }
 }
+
+//class EntryViewModel: ObservableObject {
+//    @Published var entry: EntryModel
+//
+//    init(entry: EntryModel) {
+//        self.entry = entry
+//    }
+//
+//    func toggleHasFinished() {
+//        self.entry.hasFinished.toggle()
+//    }
+//}
 

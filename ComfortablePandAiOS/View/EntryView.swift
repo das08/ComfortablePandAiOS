@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EntryView: View {
-    @State var entry: EntryModel
+    @ObservedObject var entry: EntryModel
     var body: some View {
         ZStack(alignment: .topLeading) {
 //            CourseNameView()

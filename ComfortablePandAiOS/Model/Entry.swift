@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct EntryModel: Identifiable {
+class EntryModel: ObservableObject, Identifiable {
     enum EntryType {
         case Assignment
         case Quiz
@@ -16,7 +16,7 @@ struct EntryModel: Identifiable {
     }
     
     var entryType: EntryType
-    let id: String = UUID().uuidString
+    let id: UUID = UUID()
     var courseInfo: CourseInfo
     var title: String
     var description: String
@@ -33,13 +33,9 @@ struct EntryModel: Identifiable {
         self.hasFinished = hasFinished
         self.isNew = isNew
     }
-    
-    mutating func toggleHasFinished() {
-        self.hasFinished.toggle()
-    }
 }
 
-struct CourseInfo: Identifiable {
+class CourseInfo: ObservableObject, Identifiable {
     var id: String
     var courseName: String
     

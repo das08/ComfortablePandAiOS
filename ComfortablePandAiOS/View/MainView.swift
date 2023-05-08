@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var viewModel = EntryViewModel()
+    @StateObject var entriesViewModel = EntriesViewModel()
     @ObservedObject var statsViewModel = StatsViewModel()
     
     init() {
@@ -23,7 +23,7 @@ struct MainView: View {
             NavigationView {
                 ScrollView (.vertical, showsIndicators: false) {
                     VStack {
-                        ForEach(viewModel.entries) { entry in
+                        ForEach(entriesViewModel.entries) { entry in
                             EntryView(entry: entry)
                             Divider()
                         }
