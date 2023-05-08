@@ -38,6 +38,7 @@
 		97DB2CCE2A092FCC0037C59D /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CCD2A092FCC0037C59D /* Realm.swift */; };
 		97DB2CCF2A092FF20037C59D /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CCD2A092FCC0037C59D /* Realm.swift */; };
 		97DB2CD12A09355E0037C59D /* Sakai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CD02A09355E0037C59D /* Sakai.swift */; };
+		97DB2CD42A09379D0037C59D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CD32A09379D0037C59D /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DB2CD42A09379D0037C59D /* Alamofire in Frameworks */,
 				97DB2CC32A0747C80037C59D /* RealmSwift in Frameworks */,
 				97DB2CC12A0747C80037C59D /* Realm in Frameworks */,
 			);
@@ -290,6 +292,7 @@
 			packageProductDependencies = (
 				97DB2CC02A0747C80037C59D /* Realm */,
 				97DB2CC22A0747C80037C59D /* RealmSwift */,
+				97DB2CD32A09379D0037C59D /* Alamofire */,
 			);
 			productName = ComfortablePandAiOS;
 			productReference = 97DB2C1129F928F10037C59D /* ComfortablePandAiOS.app */;
@@ -389,6 +392,7 @@
 			mainGroup = 97DB2C0829F928F10037C59D;
 			packageReferences = (
 				97DB2CBF2A0747C80037C59D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				97DB2CD22A09379D0037C59D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 97DB2C1229F928F10037C59D /* Products */;
 			projectDirPath = "";
@@ -904,6 +908,14 @@
 				kind = branch;
 			};
 		};
+		97DB2CD22A09379D0037C59D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -926,6 +938,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 97DB2CBF2A0747C80037C59D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		97DB2CD32A09379D0037C59D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97DB2CD22A09379D0037C59D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

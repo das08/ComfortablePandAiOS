@@ -28,6 +28,15 @@ struct ContentView: View {
               realm.add(StatsModel())
             }
         }
+        SakaiAPI.shared.getLoginToken { result in
+            switch result {
+            case .success(let tokens):
+                print("Login Token: \(tokens.LT ?? "nil")")
+                print("Execution: \(tokens.EXE ?? "nil")")
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
         WidgetCenter.shared.reloadAllTimelines()
     }
     var body: some View {
