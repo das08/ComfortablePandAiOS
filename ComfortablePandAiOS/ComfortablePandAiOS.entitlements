@@ -10,5 +10,9 @@
 	</array>
 	<key>com.apple.security.files.user-selected.read-only</key>
 	<true/>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)group.com.das08.PandAssist</string>
+	</array>
 </dict>
 </plist>

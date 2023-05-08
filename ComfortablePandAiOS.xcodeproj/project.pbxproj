@@ -39,6 +39,8 @@
 		97DB2CCF2A092FF20037C59D /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CCD2A092FCC0037C59D /* Realm.swift */; };
 		97DB2CD12A09355E0037C59D /* Sakai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CD02A09355E0037C59D /* Sakai.swift */; };
 		97DB2CD42A09379D0037C59D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CD32A09379D0037C59D /* Alamofire */; };
+		97DB2CD62A0939E40037C59D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CD52A0939E40037C59D /* LoginView.swift */; };
+		97DB2CD72A0949B30037C59D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CC42A076F800037C59D /* Stats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		97DB2CCC2A092F030037C59D /* PandAssist WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PandAssist WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		97DB2CCD2A092FCC0037C59D /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		97DB2CD02A09355E0037C59D /* Sakai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sakai.swift; sourceTree = "<group>"; };
+		97DB2CD52A0939E40037C59D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +221,7 @@
 			children = (
 				97DB2C4029F936150037C59D /* EntryView.swift */,
 				97DB2C472A0654A10037C59D /* MainView.swift */,
+				97DB2CD52A0939E40037C59D /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,6 +455,7 @@
 				97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
 				97DB2CD12A09355E0037C59D /* Sakai.swift in Sources */,
+				97DB2CD62A0939E40037C59D /* LoginView.swift in Sources */,
 				97DB2C482A0654A10037C59D /* MainView.swift in Sources */,
 				97DB2C4129F936150037C59D /* EntryView.swift in Sources */,
 				97DB2C832A06875A0037C59D /* colors.swift in Sources */,
@@ -485,6 +490,7 @@
 				97DB2CA72A068C450037C59D /* PandAssist_WidgetBundle.swift in Sources */,
 				97DB2CCF2A092FF20037C59D /* Realm.swift in Sources */,
 				97DB2CB32A068C4E0037C59D /* colors.swift in Sources */,
+				97DB2CD72A0949B30037C59D /* Stats.swift in Sources */,
 				97DB2CA92A068C450037C59D /* PandAssist_Widget.swift in Sources */,
 				97DB2CB42A068C500037C59D /* dates.swift in Sources */,
 			);

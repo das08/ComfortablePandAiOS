@@ -10,8 +10,8 @@ import RealmSwift
 
 struct MainView: View {
     let manager = RealmManager()
-    @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
-    @ObservedResults(StatsModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var stats
+    @ObservedResults(EntryModel.self,configuration: RealmManager().configuration) var entries
+    @ObservedResults(StatsModel.self,configuration: RealmManager().configuration) var stats
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.systemFont(ofSize: 26)]
@@ -47,7 +47,7 @@ struct MainView: View {
                 .tabItem {
                     IconView(systemName: "bell")
                 }
-            IconView(systemName: "gear")
+            LoginView()
                 .tabItem {
                     IconView(systemName: "gear")
                 }

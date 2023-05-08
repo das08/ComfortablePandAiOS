@@ -6,5 +6,9 @@
 	<array>
 		<string>group.com.das08.PandAssist</string>
 	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)group.com.das08.PandAssist</string>
+	</array>
 </dict>
 </plist>

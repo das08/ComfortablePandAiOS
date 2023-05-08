@@ -9,9 +9,12 @@ import SwiftUI
 import RealmSwift
 
 struct WidgetView: View {
-    @Environment(\.realm) var realm
     let manager = RealmManager()
-    @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
+    @ObservedResults(EntryModel.self,configuration: RealmManager().configuration) var entries
+    
+    init() {
+        print(entries.count)
+    }
     
     var body: some View {
         VStack(alignment:.leading ,spacing: 0){

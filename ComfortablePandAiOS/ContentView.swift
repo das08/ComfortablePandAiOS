@@ -11,8 +11,8 @@ import WidgetKit
 
 struct ContentView: View {
     let realm = RealmManager().realm
-    @ObservedResults(EntryModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var entries
-    @ObservedResults(StatsModel.self,configuration: Realm.Configuration(fileURL:RealmManager().fileUrl)) var stats
+    @ObservedResults(EntryModel.self,configuration: RealmManager().configuration) var entries
+    @ObservedResults(StatsModel.self,configuration: RealmManager().configuration) var stats
     
     init() {
         let demoEntries = DemoEntry.entries
@@ -28,15 +28,15 @@ struct ContentView: View {
               realm.add(StatsModel())
             }
         }
-        SakaiAPI.shared.getLoginToken { result in
-            switch result {
-            case .success(let tokens):
-                print("Login Token: \(tokens.LT ?? "nil")")
-                print("Execution: \(tokens.EXE ?? "nil")")
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
-        }
+//        SakaiAPI.shared.getLoginToken { result in
+//            switch result {
+//            case .success(let tokens):
+//                print("Login Token: \(tokens.LT ?? "nil")")
+//                print("Execution: \(tokens.EXE ?? "nil")")
+//            case .failure(let error):
+//                print("Error: \(error.localizedDescription)")
+//            }
+//        }
         WidgetCenter.shared.reloadAllTimelines()
     }
     var body: some View {
