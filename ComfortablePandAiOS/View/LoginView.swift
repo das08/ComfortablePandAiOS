@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct LoginView: View {
-    @State private var email: String = ""
+    @State private var username: String = ""
     @State private var password: String = ""
+    let realm = RealmManager().realm
+    @ObservedRealmObject var userInfo: UserInfoModel
 
     var body: some View {
         VStack {
@@ -17,7 +20,7 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .padding(.bottom, 40)
             
-            TextField("Email", text: $email)
+            TextField("ECS ID", text: $username)
                 .padding()
                 .autocapitalization(.none)
                 .keyboardType(.emailAddress)
@@ -31,8 +34,22 @@ struct LoginView: View {
                 .padding(.horizontal, 20)
             
             Button(action: {
-                // Handle login action
-                print("Login button tapped")
+                try? realm.write {
+                    userInfo.thaw()?.morning = self.username
+                    userInfo.thaw()?.midnight = self.password
+                }
+                SakaiAPI.shared.login { result in
+                    switch result {
+                    case .success(let loginResult):
+                        if loginResult.Success {
+                            print("User logged in successfully")
+                        } else {
+                            print("Login process completed but user is not logged in. Please check credentials or network connection.")
+                        }
+                    case .failure(let error):
+                        print("Failed to log in: \(error)")
+                    }
+                }
             }) {
                 Text("Login")
                     .font(.headline)
@@ -48,9 +65,9 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginView()
+//    }
+//}
 

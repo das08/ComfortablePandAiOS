@@ -11,7 +11,7 @@ import RealmSwift
 struct MainView: View {
     let manager = RealmManager()
     @ObservedResults(EntryModel.self,configuration: RealmManager().configuration) var entries
-    @ObservedResults(StatsModel.self,configuration: RealmManager().configuration) var stats
+    @ObservedResults(UserInfoModel.self,configuration: RealmManager().configuration) var stats
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.systemFont(ofSize: 26)]
@@ -47,7 +47,7 @@ struct MainView: View {
                 .tabItem {
                     IconView(systemName: "bell")
                 }
-            LoginView()
+            LoginView(userInfo: stats.first!)
                 .tabItem {
                     IconView(systemName: "gear")
                 }

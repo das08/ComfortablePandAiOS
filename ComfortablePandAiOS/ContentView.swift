@@ -12,7 +12,7 @@ import WidgetKit
 struct ContentView: View {
     let realm = RealmManager().realm
     @ObservedResults(EntryModel.self,configuration: RealmManager().configuration) var entries
-    @ObservedResults(StatsModel.self,configuration: RealmManager().configuration) var stats
+    @ObservedResults(UserInfoModel.self,configuration: RealmManager().configuration) var stats
     
     init() {
         let demoEntries = DemoEntry.entries
@@ -25,18 +25,9 @@ struct ContentView: View {
         if stats.isEmpty {
             print("creating new entries")
             try? realm.write {
-              realm.add(StatsModel())
+              realm.add(UserInfoModel())
             }
         }
-//        SakaiAPI.shared.getLoginToken { result in
-//            switch result {
-//            case .success(let tokens):
-//                print("Login Token: \(tokens.LT ?? "nil")")
-//                print("Execution: \(tokens.EXE ?? "nil")")
-//            case .failure(let error):
-//                print("Error: \(error.localizedDescription)")
-//            }
-//        }
         SakaiAPI.shared.ensureUserIsLoggedIn { result in
             switch result {
             case .success(let courses):

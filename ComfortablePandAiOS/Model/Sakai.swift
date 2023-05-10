@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 import Alamofire
 
 final class SakaiAPI {
     static let shared = SakaiAPI()
+    private let userInfo = RealmManager().realm.objects(UserInfoModel.self).first
     
     private func getLoginToken(completion: @escaping (Result<Token, Error>) -> Void) {
         let urlString = "https://panda.ecs.kyoto-u.ac.jp/cas/login?service=https%3A%2F%2Fpanda.ecs.kyoto-u.ac.jp%2Fsakai-login-tool%2Fcontainer"
@@ -76,26 +78,13 @@ final class SakaiAPI {
         getLoginToken { result in
             switch result {
             case .success(let tokens):
-                var ECS_ID = ""
-                var Password = ""
-                
-//                if let ecsIdResult = getKeychain(account: "ECS_ID"),
-//                   let passwordResult = getKeychain(account: "Password"),
-//                   ecsIdResult.success && passwordResult.success {
-//                    ECS_ID = ecsIdResult.data
-//                    Password = passwordResult.data
-//                } else {
-//                    completion(.failure(FetchError(message: ErrorMsg.FailedToGetKeychain.rawValue)))
-//                    return
-//                }
-                
                 let urlString = "https://panda.ecs.kyoto-u.ac.jp/cas/login?service=https%3A%2F%2Fpanda.ecs.kyoto-u.ac.jp%2Fsakai-login-tool%2Fcontainer"
                 let parameters: [String: Any] = [
                     "_eventId": "submit",
                     "execution": tokens.EXE ?? "",
                     "lt": tokens.LT ?? "",
-                    "password": Password,
-                    "username": ECS_ID
+                    "password": self.userInfo?.midnight ?? "",
+                    "username": self.userInfo?.morning ?? ""
                 ]
                 
                 AF.request(urlString, method: .post, parameters: parameters).responseData { response in

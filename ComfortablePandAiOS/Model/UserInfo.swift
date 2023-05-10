@@ -1,5 +1,5 @@
 //
-//  Stats.swift
+//  UserInfo.swift
 //  ComfortablePandAiOS
 //
 //  Created by Kazuki Takeda on 2023/05/07.
@@ -8,24 +8,26 @@
 import Foundation
 import RealmSwift
 
-class StatsModel: Object, ObjectKeyIdentifiable {
-    @Persisted var userName: String
+class UserInfoModel: Object, ObjectKeyIdentifiable {
+    @Persisted var displayName: String
+    @Persisted var morning: String
+    @Persisted var midnight: String
     @Persisted var lastAccessedTime: Date?
     
     override init() {
-        self.userName = "---"
+        self.displayName = "---"
         self.lastAccessedTime = nil
     }
 }
 
-extension StatsModel {
+extension UserInfoModel {
     func formatLastAccessed() -> String {
         guard let lastAccessedTime = self.lastAccessedTime
         else {
             return "未取得"
         }
         
-        var remain = getTimeRemain(lastAccessedTime)
+        let remain = getTimeRemain(lastAccessedTime)
         if remain.days > 0 {
             return String(format: "%d日前", arguments: [remain.days])
         }
