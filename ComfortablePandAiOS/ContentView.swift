@@ -37,6 +37,7 @@ struct ContentView: View {
 //                print("Error: \(error.localizedDescription)")
 //            }
 //        }
+        SakaiAPI.shared.ensureUserIsLoggedIn()
         WidgetCenter.shared.reloadAllTimelines()
     }
     var body: some View {
