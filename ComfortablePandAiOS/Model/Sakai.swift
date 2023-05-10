@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 import Alamofire
+import SwiftSoup
 
 final class SakaiAPI {
     static let shared = SakaiAPI()
@@ -66,8 +67,14 @@ final class SakaiAPI {
                     completion(.failure(FetchError(message: "Data could not be converted to string")))
                     return
                 }
+                var courses: [CourseInfo] = []
                 let matches = loginRegex.matches(in: str, options: [], range: NSRange(0..<str.count))
-                completion(.success(LoginResult(Success: matches.count > 0, Courses: [])))
+                let loggedin = matches.count > 0
+                if loggedin {
+                    courses = self.fetchCourseInfo(html: str)
+                }
+                completion(.success(LoginResult(Success: loggedin, Courses: courses)))
+                
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -94,11 +101,14 @@ final class SakaiAPI {
                             completion(.failure(FetchError(message: "Data could not be converted to string")))
                             return
                         }
-
+                        var courses: [CourseInfo] = []
                         let regex = try? NSRegularExpression(pattern: "\"loggedIn\": true")
                         let matches = regex?.matches(in: str, options: [], range: NSRange(0..<str.count))
-                        var result = LoginResult(Success: matches?.count ?? 0 > 0, Courses: [])
+                        let loggedin = matches?.count ?? 0 > 0
+                        courses = self.fetchCourseInfo(html: str)
+                        var result = LoginResult(Success: loggedin, Courses: courses)
                         completion(.success(result))
+                        
                     case .failure(let error):
                         completion(.failure(error))
                     }
@@ -108,8 +118,33 @@ final class SakaiAPI {
             }
         }
     }
+
+    func fetchCourseInfo(html: String) -> [CourseInfo] {
+        var courses: [CourseInfo] = []
+        let courseIdRegex = try? NSRegularExpression(pattern: "(https?://[^/]+)/portal/site-?[a-z]*/([^/]+)")
+        
+        do {
+            let doc: SwiftSoup.Document = try SwiftSoup.parse(html)
+            let semesterElement = try doc.getElementsByClass("moresites-left-col").first()
+            let termSites = try semesterElement?.getElementsByClass("fav-sites-term").first()
+            let courseEntries = try? termSites?.getElementsByClass("fav-sites-entry")
+
+            try courseEntries!.forEach({ entry in
+                let aTag = try entry.getElementsByTag("a").first()
+                let courseId = try aTag?.attr("href").match("(https?://[^/]+)/portal/site-?[a-z]*/([^/]+)")[2]
+                let courseName = try aTag?.attr("title")
+                courses.append(CourseInfo(id: courseId ?? "", courseName: courseName ?? ""))
+            })
+        } catch Exception.Error(_, let message) {
+            print(message)
+        } catch {
+            print("error")
+        }
+        
+        return courses
+    }
     
-    func ensureUserIsLoggedIn(completion: @escaping (Result<[SakaiCourse], Error>) -> Void) {
+    func ensureUserIsLoggedIn(completion: @escaping (Result<[CourseInfo], Error>) -> Void) {
         isLoggedin { result in
             switch result {
             case .success(let loggedInResult):
@@ -150,14 +185,9 @@ struct FetchError: Error {
     let message: String
 }
 
-struct SakaiCourse {
-    let id: String
-    let name: String
-}
-
 struct LoginResult {
     let Success: Bool
-    let Courses: [SakaiCourse]
+    let Courses: [CourseInfo]
 }
 
 enum SakaiError: Error {

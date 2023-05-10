@@ -10,6 +10,7 @@ import RealmSwift
 
 struct MainView: View {
     let manager = RealmManager()
+    @ObservedResults(CourseInfo.self,configuration: RealmManager().configuration) var courses
     @ObservedResults(EntryModel.self,configuration: RealmManager().configuration) var entries
     @ObservedResults(UserInfoModel.self,configuration: RealmManager().configuration) var stats
     

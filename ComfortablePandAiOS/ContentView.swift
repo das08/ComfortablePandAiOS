@@ -11,6 +11,7 @@ import WidgetKit
 
 struct ContentView: View {
     let realm = RealmManager().realm
+    @ObservedResults(CourseInfo.self,configuration: RealmManager().configuration) var courses
     @ObservedResults(EntryModel.self,configuration: RealmManager().configuration) var entries
     @ObservedResults(UserInfoModel.self,configuration: RealmManager().configuration) var stats
     
