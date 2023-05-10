@@ -37,7 +37,15 @@ struct ContentView: View {
 //                print("Error: \(error.localizedDescription)")
 //            }
 //        }
-        SakaiAPI.shared.ensureUserIsLoggedIn()
+        SakaiAPI.shared.ensureUserIsLoggedIn { result in
+            switch result {
+            case .success(let courses):
+                print("success, courses: \(courses)")
+            case .failure(let error):
+                print("error: \(error)")
+            }
+            
+        }
         WidgetCenter.shared.reloadAllTimelines()
     }
     var body: some View {

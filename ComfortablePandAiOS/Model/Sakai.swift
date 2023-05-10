@@ -48,7 +48,7 @@ final class SakaiAPI {
     }
     
     
-    func isLoggedin(completion: @escaping (Result<Bool, Error>) -> Void) {
+    func isLoggedin(completion: @escaping (Result<LoginResult, Error>) -> Void) {
         let urlString = "https://panda.ecs.kyoto-u.ac.jp/portal/"
         let regex = try? NSRegularExpression(pattern: "\"loggedIn\": true")
 
@@ -65,14 +65,14 @@ final class SakaiAPI {
                     return
                 }
                 let matches = loginRegex.matches(in: str, options: [], range: NSRange(0..<str.count))
-                completion(.success(matches.count > 0))
+                completion(.success(LoginResult(Success: matches.count > 0, Courses: [])))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
     }
     
-    func login(completion: @escaping (Result<Bool, Error>) -> Void) {
+    func login(completion: @escaping (Result<LoginResult, Error>) -> Void) {
         getLoginToken { result in
             switch result {
             case .success(let tokens):
@@ -108,8 +108,8 @@ final class SakaiAPI {
 
                         let regex = try? NSRegularExpression(pattern: "\"loggedIn\": true")
                         let matches = regex?.matches(in: str, options: [], range: NSRange(0..<str.count))
-                        print("loged in: \(matches?.count ?? 0), \(matches?.count ?? 0 > 0)")
-                        completion(.success(matches?.count ?? 0 > 0))
+                        var result = LoginResult(Success: matches?.count ?? 0 > 0, Courses: [])
+                        completion(.success(result))
                     case .failure(let error):
                         completion(.failure(error))
                     }
@@ -120,34 +120,36 @@ final class SakaiAPI {
         }
     }
     
-    func ensureUserIsLoggedIn() {
+    func ensureUserIsLoggedIn(completion: @escaping (Result<[SakaiCourse], Error>) -> Void) {
         isLoggedin { result in
             switch result {
-            case .success(let isLoggedIn):
-                if !isLoggedIn {
+            case .success(let loggedInResult):
+                if !loggedInResult.Success {
                     self.login { loginResult in
                         switch loginResult {
-                        case .success(let isLoginSuccessful):
-                            if isLoginSuccessful {
+                        case .success(let loginResult):
+                            if loginResult.Success {
                                 print("User logged in successfully")
+                                completion(.success(loginResult.Courses))
                             } else {
                                 print("Login process completed but user is not logged in. Please check credentials or network connection.")
+                                completion(.failure(SakaiError.LoginFailure))
                             }
                         case .failure(let error):
                             print("Failed to log in: \(error)")
+                            completion(.failure(SakaiError.LoginFailure))
                         }
                     }
                 } else {
                     print("User is already logged in")
+                    completion(.success(loggedInResult.Courses))
                 }
             case .failure(let error):
                 print("Failed to check if user is logged in: \(error)")
+                completion(.failure(SakaiError.LoginFailure))
             }
         }
     }
-
-
-    
 }
 
 struct Token {
@@ -159,11 +161,18 @@ struct FetchError: Error {
     let message: String
 }
 
-enum Status: Error {
-    case Default
-    case Network
-    case JSONParse
-    case LTNotFound
-    case EXENotFound
+struct SakaiCourse {
+    let id: String
+    let name: String
+}
+
+struct LoginResult {
+    let Success: Bool
+    let Courses: [SakaiCourse]
+}
+
+enum SakaiError: Error {
+    case LoginFailure
+    case CourseFetchFailure
 }
 
