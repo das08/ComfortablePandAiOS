@@ -33,6 +33,14 @@ struct ContentView: View {
             switch result {
             case .success(let courses):
                 print("success, courses: \(courses)")
+                async {
+                    do {
+                        let assignments = try await SakaiAPI.shared.fetchAssignment2(course: courses[1])
+                        print(assignments)
+                    } catch {
+                        print("Failed to fetch assignments: \(error)")
+                    }
+                }
             case .failure(let error):
                 print("error: \(error)")
             }

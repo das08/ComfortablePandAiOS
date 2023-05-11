@@ -144,6 +144,69 @@ final class SakaiAPI {
         return courses
     }
     
+//    func fetchAssignment(course: CourseInfo, completion: @escaping (Result<SakaiAssignmentCollection, Error>) -> Void) {
+//        let queryURL = "https://panda.ecs.kyoto-u.ac.jp/direct/assignment/site/\(course.courseID).json"
+//
+//        AF.request(queryURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
+//            .validate(statusCode: 200..<300)
+//            .responseDecodable(of: SakaiAssignmentCollection.self, decoder: JSONDecoder()) { response in
+//                switch response.result {
+//                case .success(let data):
+//                    print(response.value)
+//                    completion(.success(data))
+//                case .failure(let error):
+//                    print("Request failed: \(error)")
+//                    completion(.failure(error))
+//                }
+//            }
+//    }
+    func fetchAssignment(course: CourseInfo) async throws -> SakaiAssignmentCollection {
+        let queryURL = "https://panda.ecs.kyoto-u.ac.jp/direct/assignment/site/\(course.courseID).json"
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(queryURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
+                .validate(statusCode: 200..<300)
+                .responseDecodable(of: SakaiAssignmentCollection.self, decoder: JSONDecoder()) { response in
+                    switch response.result {
+                    case .success(let data):
+                        continuation.resume(returning: data)
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    }
+                }
+        }
+    }
+    
+    func fetchAssignment2(course: CourseInfo) async throws -> SakaiAssignmentCollection {
+        let queryURL = "https://panda.ecs.kyoto-u.ac.jp/direct/assignment/site/\(course.courseID).json"
+        let response = await AF.request(queryURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .serializingDecodable(SakaiAssignmentCollection.self)
+            .response
+        switch response.result {
+        case .success(let data):
+            return data
+        case .failure(let error):
+            throw error
+        }
+    }
+    
+    func fetchAllAssignments(courses: [CourseInfo]) async throws -> [SakaiAssignmentCollection] {
+        var assignments: [SakaiAssignmentCollection] = []
+
+        try await withThrowingTaskGroup(of: SakaiAssignmentCollection.self) { group in
+            for course in courses {
+                group.addTask {
+                    try await self.fetchAssignment(course: course)
+                }
+            }
+
+            for try await assignment in group {
+                assignments.append(assignment)
+            }
+        }
+        return assignments
+    }
+    
     func ensureUserIsLoggedIn(completion: @escaping (Result<[CourseInfo], Error>) -> Void) {
         isLoggedin { result in
             switch result {
@@ -195,3 +258,23 @@ enum SakaiError: Error {
     case CourseFetchFailure
 }
 
+struct SakaiAssignmentCollection: Codable {
+    let assignment_collection: [SakaiAssignmentEntry]
+}
+
+struct SakaiAssignmentEntry: Codable, Identifiable {
+    let context: String
+    let id: String
+    let title: String
+    let dueTime: SakaiEntryDueTime
+    let openTime: SakaiEntryOpenTime
+    let instructions: String
+}
+
+struct SakaiEntryDueTime: Codable {
+    let epochSecond: Int
+}
+
+struct SakaiEntryOpenTime: Codable {
+    let epochSecond: Int
+}
