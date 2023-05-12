@@ -66,4 +66,16 @@ class RealmManager {
 
         return keyData
     }
+    
+    func deleteEntries() throws {
+        try realm.write {
+            realm.delete(realm.objects(EntryModel.self))
+        }
+    }
+    
+    func addEntries(entries: [EntryModel]) throws {
+        try realm.write {
+            realm.add(entries)
+        }
+    }
 }

@@ -19,4 +19,17 @@ extension String {
             return NSString(string: self).substring(with: r)
         }
     }
+    
+    func removeCoursePrefix() -> String {
+        let pattern = "\\[.*?\\]"
+        let regex = try? NSRegularExpression(pattern: pattern, options: [])
+        let range = NSRange(location: 0, length: self.utf16.count)
+        
+        if let result = regex?.firstMatch(in: self, options: [], range: range) {
+            let start = self.index(self.startIndex, offsetBy: result.range.length)
+            return String(self[start...])
+        }
+        
+        return self
+    }
 }

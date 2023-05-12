@@ -43,6 +43,8 @@
 		97DB2CD72A0949B30037C59D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CC42A076F800037C59D /* UserInfo.swift */; };
 		97DB2CDB2A0B79EE0037C59D /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 97DB2CDA2A0B79EE0037C59D /* SwiftSoup */; };
 		97DB2CDD2A0BCAEC0037C59D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CDC2A0BCAEC0037C59D /* String.swift */; };
+		97DB2CE02A0C75E60037C59D /* SakaiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CDF2A0C75E60037C59D /* SakaiResponse.swift */; };
+		97DB2CE12A0C75E60037C59D /* SakaiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB2CDF2A0C75E60037C59D /* SakaiResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,7 @@
 		97DB2CD02A09355E0037C59D /* Sakai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sakai.swift; sourceTree = "<group>"; };
 		97DB2CD52A0939E40037C59D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97DB2CDC2A0BCAEC0037C59D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		97DB2CDF2A0C75E60037C59D /* SakaiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SakaiResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +240,7 @@
 				97DB2CC42A076F800037C59D /* UserInfo.swift */,
 				97DB2CCD2A092FCC0037C59D /* Realm.swift */,
 				97DB2CD02A09355E0037C59D /* Sakai.swift */,
+				97DB2CDF2A0C75E60037C59D /* SakaiResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -462,6 +466,7 @@
 				97DB2C1729F928F10037C59D /* ContentView.swift in Sources */,
 				97DB2CBA2A068D450037C59D /* WidgetView.swift in Sources */,
 				97DB2C1529F928F10037C59D /* ComfortablePandAiOSApp.swift in Sources */,
+				97DB2CE02A0C75E60037C59D /* SakaiResponse.swift in Sources */,
 				97DB2CD12A09355E0037C59D /* Sakai.swift in Sources */,
 				97DB2CD62A0939E40037C59D /* LoginView.swift in Sources */,
 				97DB2C482A0654A10037C59D /* MainView.swift in Sources */,
@@ -497,6 +502,7 @@
 				97DB2CB52A068C540037C59D /* Entry.swift in Sources */,
 				97DB2CA72A068C450037C59D /* PandAssist_WidgetBundle.swift in Sources */,
 				97DB2CCF2A092FF20037C59D /* Realm.swift in Sources */,
+				97DB2CE12A0C75E60037C59D /* SakaiResponse.swift in Sources */,
 				97DB2CB32A068C4E0037C59D /* colors.swift in Sources */,
 				97DB2CD72A0949B30037C59D /* UserInfo.swift in Sources */,
 				97DB2CA92A068C450037C59D /* PandAssist_Widget.swift in Sources */,

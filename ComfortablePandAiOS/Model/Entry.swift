@@ -39,6 +39,15 @@ class EntryModel: Object, ObjectKeyIdentifiable {
         super.init()
     }
     
+    static func convert(from: SakaiAssignmentCollection, course: CourseInfo) -> [EntryModel] {
+        var entries:[EntryModel] = []
+        for sakaiEntry in from.assignment_collection {
+            entries.append(EntryModel(entryType: .Assignment, courseInfo: course, title: sakaiEntry.title, detail: sakaiEntry.instructions, dueDate: Date(unix: sakaiEntry.dueTime.epochSecond), hasFinished: false, isNew: true))
+        }
+        
+        return entries
+    }
+    
     func getCourseName() -> String {
         guard let courseName = courseInfo?.courseName
         else {

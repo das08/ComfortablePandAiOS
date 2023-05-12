@@ -64,4 +64,8 @@ extension Date {
 
         return (month: month, day: day, hour: hour, minute: minute, second: second)
     }
+    
+    init(unix: Int) {
+        self.init(timeIntervalSince1970: TimeInterval(unix))
+    }
 }

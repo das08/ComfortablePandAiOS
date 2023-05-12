@@ -16,13 +16,13 @@ struct ContentView: View {
     @ObservedResults(UserInfoModel.self,configuration: RealmManager().configuration) var stats
     
     init() {
-        let demoEntries = DemoEntry.entries
-        if entries.isEmpty {
-            print("creating new entries")
-            try? realm.write {
-              realm.add(demoEntries)
-            }
-        }
+//        let demoEntries = DemoEntry.entries
+//        if entries.isEmpty {
+//            print("creating new entries")
+//            try? realm.write {
+//              realm.add(demoEntries)
+//            }
+//        }
         if stats.isEmpty {
             print("creating new entries")
             try? realm.write {
@@ -34,9 +34,13 @@ struct ContentView: View {
             case .success(let courses):
                 print("success, courses: \(courses)")
                 async {
+                    let realmManager = RealmManager()
+                    
                     do {
-                        let assignments = try await SakaiAPI.shared.fetchAssignment2(course: courses[1])
-                        print(assignments)
+                        let assignments = try await SakaiAPI.shared.fetchAllAssignments(courses: courses)
+//                        print("entries: \(entries)")
+                        try realmManager.deleteEntries()
+                        try realmManager.addEntries(entries: assignments)
                     } catch {
                         print("Failed to fetch assignments: \(error)")
                     }

@@ -132,7 +132,7 @@ final class SakaiAPI {
             try courseEntries!.forEach({ entry in
                 let aTag = try entry.getElementsByTag("a").first()
                 let courseId = try aTag?.attr("href").match("(https?://[^/]+)/portal/site-?[a-z]*/([^/]+)")[2]
-                let courseName = try aTag?.attr("title")
+                let courseName = try aTag?.attr("title").removeCoursePrefix()
                 courses.append(CourseInfo(id: courseId ?? "", courseName: courseName ?? ""))
             })
         } catch Exception.Error(_, let message) {
@@ -160,23 +160,23 @@ final class SakaiAPI {
 //                }
 //            }
 //    }
-    func fetchAssignment(course: CourseInfo) async throws -> SakaiAssignmentCollection {
-        let queryURL = "https://panda.ecs.kyoto-u.ac.jp/direct/assignment/site/\(course.courseID).json"
-        return try await withCheckedThrowingContinuation { continuation in
-            AF.request(queryURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
-                .validate(statusCode: 200..<300)
-                .responseDecodable(of: SakaiAssignmentCollection.self, decoder: JSONDecoder()) { response in
-                    switch response.result {
-                    case .success(let data):
-                        continuation.resume(returning: data)
-                    case .failure(let error):
-                        continuation.resume(throwing: error)
-                    }
-                }
-        }
-    }
+//    func fetchAssignment(course: CourseInfo) async throws -> SakaiAssignmentCollection {
+//        let queryURL = "https://panda.ecs.kyoto-u.ac.jp/direct/assignment/site/\(course.courseID).json"
+//        return try await withCheckedThrowingContinuation { continuation in
+//            AF.request(queryURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
+//                .validate(statusCode: 200..<300)
+//                .responseDecodable(of: SakaiAssignmentCollection.self, decoder: JSONDecoder()) { response in
+//                    switch response.result {
+//                    case .success(let data):
+//                        continuation.resume(returning: data)
+//                    case .failure(let error):
+//                        continuation.resume(throwing: error)
+//                    }
+//                }
+//        }
+//    }
     
-    func fetchAssignment2(course: CourseInfo) async throws -> SakaiAssignmentCollection {
+    func fetchAssignment(course: CourseInfo) async throws -> [EntryModel] {
         let queryURL = "https://panda.ecs.kyoto-u.ac.jp/direct/assignment/site/\(course.courseID).json"
         let response = await AF.request(queryURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
@@ -184,16 +184,16 @@ final class SakaiAPI {
             .response
         switch response.result {
         case .success(let data):
-            return data
+            return EntryModel.convert(from: data, course: course)
         case .failure(let error):
             throw error
         }
     }
     
-    func fetchAllAssignments(courses: [CourseInfo]) async throws -> [SakaiAssignmentCollection] {
-        var assignments: [SakaiAssignmentCollection] = []
+    func fetchAllAssignments(courses: [CourseInfo]) async throws -> [EntryModel] {
+        var assignments: [EntryModel] = []
 
-        try await withThrowingTaskGroup(of: SakaiAssignmentCollection.self) { group in
+        try await withThrowingTaskGroup(of: [EntryModel].self) { group in
             for course in courses {
                 group.addTask {
                     try await self.fetchAssignment(course: course)
@@ -201,7 +201,7 @@ final class SakaiAPI {
             }
 
             for try await assignment in group {
-                assignments.append(assignment)
+                assignments.append(contentsOf: assignment)
             }
         }
         return assignments
@@ -256,25 +256,4 @@ struct LoginResult {
 enum SakaiError: Error {
     case LoginFailure
     case CourseFetchFailure
-}
-
-struct SakaiAssignmentCollection: Codable {
-    let assignment_collection: [SakaiAssignmentEntry]
-}
-
-struct SakaiAssignmentEntry: Codable, Identifiable {
-    let context: String
-    let id: String
-    let title: String
-    let dueTime: SakaiEntryDueTime
-    let openTime: SakaiEntryOpenTime
-    let instructions: String
-}
-
-struct SakaiEntryDueTime: Codable {
-    let epochSecond: Int
-}
-
-struct SakaiEntryOpenTime: Codable {
-    let epochSecond: Int
 }
